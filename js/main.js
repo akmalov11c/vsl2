@@ -12,7 +12,7 @@ function initForm() {
   const unlockBtn = document.getElementById("unlockBtn");
   const timerElement = document.getElementById("timer");
 
-  let totalSeconds = 1; // 25:00
+  let totalSeconds = 1500; // 25:00
   const pad = (n) => String(n).padStart(2, "0");
 
   const setTime = (s) => {
