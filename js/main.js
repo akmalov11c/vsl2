@@ -12,26 +12,26 @@ function initForm() {
   const unlockBtn = document.getElementById("unlockBtn");
   const timerElement = document.getElementById("timer");
 
-  let totalSeconds = 1500; // 25:00
-  const pad = (n) => String(n).padStart(2, "0");
+  // let totalSeconds = 1500; // 25:00
+  // const pad = (n) => String(n).padStart(2, "0");
 
-  const setTime = (s) => {
-    const m = pad(Math.floor(s / 60));
-    const sec = pad(s % 60);
-    const t = `${m}:${sec}`;
-    if (timerElement && timerElement.textContent !== t)
-      timerElement.textContent = t;
-    if (unlockBtn && unlockBtn.textContent !== `Ro'yxatdan o'tish (${t})`) {
-      unlockBtn.textContent = `Ro'yxatdan o'tish (${t})`;
-    }
-  };
+  // const setTime = (s) => {
+  //   const m = pad(Math.floor(s / 60));
+  //   const sec = pad(s % 60);
+  //   const t = `${m}:${sec}`;
+  //   if (timerElement && timerElement.textContent !== t)
+  //     timerElement.textContent = t;
+  //   if (unlockBtn && unlockBtn.textContent !== `Ro'yxatdan o'tish (${t})`) {
+  //     unlockBtn.textContent = `Ro'yxatdan o'tish (${t})`;
+  //   }
+  // };
 
-  if (form) form.style.display = "none";
-  if (unlockBtn) {
-    unlockBtn.disabled = true;
-    unlockBtn.setAttribute("aria-disabled", "true");
-    setTime(totalSeconds);
-  }
+  // if (form) form.style.display = "none";
+  // if (unlockBtn) {
+  //   unlockBtn.disabled = true;
+  //   unlockBtn.setAttribute("aria-disabled", "true");
+  //   setTime(totalSeconds);
+  // }
 
   function startCountdown() {
     const endTime = Date.now() + totalSeconds * 1000;
