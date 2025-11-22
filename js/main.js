@@ -10,9 +10,12 @@ function initForm() {
   const dropdown = document.getElementById("countryDropdown");
   const dropdownIcon = document.getElementById("dropdownIcon");
   const timerElement = document.getElementById("timer");
+  const unlockBtn = document.getElementById("unlockBtn");
 
-  let totalSeconds = 1500; // 25:00
+  let totalSeconds = 60 * 25; // 25:00
   const pad = (n) => String(n).padStart(2, "0");
+  unlockBtn.disabled = true;
+  form.style.display = "none";
 
   const setTime = (s) => {
     const m = pad(Math.floor(s / 60));
@@ -20,6 +23,7 @@ function initForm() {
     const t = `${m}:${sec}`;
     if (timerElement && timerElement.textContent !== t)
       timerElement.textContent = t;
+    unlockBtn.textContent = `Ro'yxatdan o'tish (${t})`;
   };
 
   function startCountdown() {
@@ -32,12 +36,21 @@ function initForm() {
 
       if (remaining <= 0) {
         clearInterval(countdown);
-        if (timerElement) timerElement.textContent = "00:00";
+        if (timerElement) {
+          timerElement.textContent = "00:00";
+          unlockBtn.textContent = `Ro'yxatdan o'tish`;
+          unlockBtn.disabled = false;
+        }
       } else {
         setTime(remaining);
       }
     }, 1000);
   }
+
+  unlockBtn.addEventListener("click", () => {
+    form.style.display = "";
+    unlockBtn.style.display = "none";
+  });
 
   // Countries and phone masks (preserved)
   const countries = [

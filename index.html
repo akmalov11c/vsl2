@@ -706,6 +706,10 @@
         color: #2f72f5;
         z-index: 1;
       }
+
+      .unlockBtn:disabled {
+        opacity: 0.5;
+      }
     </style>
 
     <!-- Meta Pixel Code -->
@@ -1302,16 +1306,16 @@
           Ismingizni va raqamingizni qoldiring, darsni hozir jo‘natamiz 👇
         </div>
 
-        <!-- <button
+        <button
           id="unlockBtn"
-          class="HomeFormBtn"
+          class="HomeFormBtn unlockBtn"
           disabled
           aria-disabled="true"
           aria-controls="registrationForm"
           style="margin-bottom: 15px"
         >
           Ro'yxatdan o'tish
-        </button> -->
+        </button>
 
         <form
           id="registrationForm"
